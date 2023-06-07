@@ -1,0 +1,20 @@
+<div class="dashboard-main">
+    <div class="sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="dashboard-content">
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="item-section" >
+            <!-- <div class="main">
+                <p>Name:{{artist.artist_name}}</p>
+                <p>Description:{{artist.artist_desc}}</p>
+                <img style="height:200px; width: 200px;"  src="{{artist.artist_img}}" alt="">
+            </div> -->
+            <app-artist-card *ngFor="let artist of artists" [data]="artist" (detailEvent)="onDetail(artist)"></app-artist-card>
+        </div>
+    </div>
+</div>

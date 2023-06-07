@@ -1,0 +1,93 @@
+.row>*{
+  padding-right: unset !important;
+}
+.album-column {
+    background: #fff;
+    box-shadow: 5px 5px 0px 0 #131313;
+    overflow: hidden;
+    border-radius: 10px;
+    object-fit:cover;
+    margin: 20px 0px;
+    padding-left: unset !important;
+    padding-right: unset !important;
+    width: 330px;
+    opacity: 0.5;
+  
+  }
+.album-column img {
+    transition: transform 1s;
+  }
+  
+.album-column:hover, .back-img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+.album-column:hover img{
+    transform: scale(1.2);
+  }
+  .back-img:hover {
+    transform: scale(1.05);
+  }
+.back-img{
+  transition: transform 1s;
+  background-image: url("../../../assets/images/album4.jpg");
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.5;
+  padding-right: unset !important;
+  margin-top: 60px;
+  background-position: center; 
+  position: relative;
+}
+.text-over{
+  position: absolute;
+  z-index: 100;
+  bottom: 40px;
+  left: 20px;
+  color: black;
+  letter-spacing: 2px;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+  opacity:1 ;
+}
+.text-over span{
+  font-size: 50px;
+}
+.play-button{
+  position: absolute;
+  z-index: 100;
+  bottom: 40px;
+  right: 50px;
+    height: 60px;
+    width: 60px;
+    font-size: 25px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border: none;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.album-text{
+  /* visibility: hidden; */
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: black;
+    font-family: sans-serif;
+    visibility: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.album-column:hover .album-text{
+  visibility: visible;
+}

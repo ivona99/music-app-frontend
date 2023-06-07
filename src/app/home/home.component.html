@@ -1,0 +1,54 @@
+<div class="conatiner-fluid">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="logo">
+        <img class="img-fluid" src="assets/images/logo.png" alt="Logo">
+      </div>
+      <div class="switch-login-register">
+        <app-switch-sign></app-switch-sign>
+      </div>
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/sliderimage6.gif" class="d-block w-100" alt="Slider image 1"  height="685px">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/sliderimage7.jpg" class="d-block w-100" alt="Slider image 2"  height="685px">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/sliderimage8.jpg" class="d-block w-100" alt="Slider image 3"  height="685px">
+          </div>
+        </div>
+    </div>
+  <div class="container-fluid story">
+    <div class="row py-5 story-row">
+      <div class="col-md-7 pt-5">
+        <h6 class="story-miniheader">THE STORY</h6>
+        <h2 class="story-header">A COMPUTER SCIENTIST USING AI TO PRODUCE MUSIC</h2>
+        <div class="story-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.</div>
+      </div>
+      <div class="col-md-5 pt-5">
+        <img class="img-fluid story-image" src="assets/images/storyimage1.png" alt="Story image">
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid discover">
+    <div class="player-around">
+      <input class="player">
+      <div class="dot-player"></div>
+      <h3 class="text-discover">Discover</h3>
+    </div>
+    <app-discover></app-discover>
+  </div>
+  <div class="container-fluid background-img">
+    <img src="assets/images/home-1.jpg" alt="Home image 1" class="img-fluid">
+    <h3 class="text-over-image">MUSIC IS THE ANSWER<br><br><br><br><span class="text-span">Where words fail music speaks.</span></h3>
+  </div>
+  <div class="container-fluid album">
+    <app-home-album></app-home-album>
+  </div>
+  <app-footer></app-footer>
+</div>
