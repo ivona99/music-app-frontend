@@ -1,3 +1,22 @@
-<h2>{{ name }}</h2>
-<p>{{description}}</p>
-<img [src]="imageUrl" alt="Image" />
+<div class="album-page-main">
+    <div class="album-content">
+        <img [src]="imageUrl" alt="Album" class="img-fluid img-album">
+        <div class="album-items">
+            <h1 class="album_title">{{ name }}</h1>
+            <div class="album_year">{{description}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="color: #ccc;">Albums</h2>
+        </div>
+    </div>
+    <div class="item-section">
+        <app-album-card *ngFor="let album of albums" [data]="album">
+        </app-album-card>
+        
+    </div>
+</div>
+
+
+ 

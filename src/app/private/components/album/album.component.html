@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="item-section" >
-            <app-artist-card *ngFor="let artist of artists" [data]="artist" (detailEvent)="onDetail(artist)"></app-artist-card>
+            <app-album-card *ngFor="let album of albums" [data]="album" (detailEvent)="onDetail(album)"></app-album-card>
         </div>
     </div>
 </div>

@@ -1,0 +1,39 @@
+audio{
+    width: 80%;
+}
+.row{
+    margin: unset !important;
+}
+hr{
+    margin: unset !important;
+}
+p{
+    margin-bottom:unset;
+}
+.song{
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    background-color: rgba(16, 18, 27, 40%);
+    border-radius: 25px;
+}
+.image-song{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    color: #ccc;
+}
+audio::-webkit-media-controls-panel {
+    background-color: rgba(16, 18, 27, 40%);
+    color: #fff;
+    }
+    audio::-webkit-media-controls-play-button{
+       border-radius: 15px;
+    }

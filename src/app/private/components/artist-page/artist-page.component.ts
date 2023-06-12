@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArtistService } from '../../services/artist-service/artist.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlbumI } from 'src/app/model/album.interface';
 
 @Component({
   selector: 'app-artist-page',
@@ -12,6 +13,8 @@ export class ArtistPageComponent implements OnInit {
   name?: string;
   description?:string;
   imageUrl?: string;
+  albums?:AlbumI[];
+
 //activatedroute service is used to access the id from the route parameters
 //it subcribes to the params observable to get the id value whenever the route parameter changes
 //it then calls the loaddata method to fetch the associated data using artistService
@@ -30,7 +33,11 @@ export class ArtistPageComponent implements OnInit {
     this.artistService.getDetailArtist(this.id).subscribe((data:any) => {
       this.name = data.artist_name;
       this.description = data.artist_desc
-      this.imageUrl = data.artist_img;
+      this.imageUrl = "../../../../assets/"+ data.artist_img;
+      this.albums = data.albums;
+      this.albums?.forEach((element:any) => {
+        element.album_img = "../../../../assets/"+element.album_img;
+      });
     });
   }
 

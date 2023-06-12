@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/public/services/auth-service/auth.service';
+import { AlbumService } from '../../services/album-service/album.service';
+import { UserI } from 'src/app/model/user.interface';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +9,6 @@ import { AuthService } from 'src/app/public/services/auth-service/auth.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
- 
   constructor(private elementRef: ElementRef, private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -25,17 +26,10 @@ export class SidebarComponent implements OnInit {
           
       }
   });
+
   }
   logout(){
     this.authService.logout();
   }
 
-
 }
-
-//   const body = document.querySelector('body'),
-//       sidebar = body.querySelector('nav'),
-//       toggle = body.querySelector(".toggle"),
-//       searchBtn = body.querySelector(".search-box"),
-//       modeSwitch = body.querySelector(".toggle-switch"),
-//       modeText = body.querySelector(".mode-text");

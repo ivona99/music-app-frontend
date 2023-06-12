@@ -1,0 +1,14 @@
+  <div class="row song">
+    <div class="col-md-1 item">{{i}}</div>
+    <div class="col-md-2 item">
+        <img [src]="data.song_image" alt="" class="img-fluid image-song">
+    </div>
+    <div class="col-md-1 item"><i class='bx bx-heart'></i></div>
+    <div class="col-md-1 item"><p>{{data.song_title}}</p></div>
+    <div class="col-md-1 item"><p>{{data.artist_name}}</p></div>
+    <div class="col-md-6 item">
+        <audio controls>
+            <source [src]="data.song_path" type="audio/mpeg">
+          </audio>
+    </div> 
+</div>

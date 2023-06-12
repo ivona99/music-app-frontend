@@ -1,0 +1,31 @@
+<div class="album-page-main">
+    <div class="album-content">
+        <img [src]="imageUrl" alt="Album" class="img-fluid img-album">
+        <div class="album-items">
+            <h1 class="album_title">{{ title }}</h1>
+            <div class="album_year">Year: {{year}}</div>
+            <div class="album_artist">Artist: {{artist}}</div>
+            <div class="artist-desc">Description: {{artistDesc}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 style="color: #ccc;">Songs</h2>
+        </div>
+    </div>
+    <div class="row songs-main">
+    <div class="row list-songs ">
+        <div class="col-md-1 item">Number</div>
+        <div class="col-md-2 item"></div>
+        <div class="col-md-1 item">Favourite</div>
+        <div class="col-md-1 item">Title</div>
+        <div class="col-md-1 item">Artist</div>
+        <div class="col-md-6 item">Audio</div>
+    </div>
+    <hr>
+        <app-song-card *ngFor="let song of songs let i= index" [data]="song" [i]="i"></app-song-card>
+</div>
+</div>
+
+
+ 
