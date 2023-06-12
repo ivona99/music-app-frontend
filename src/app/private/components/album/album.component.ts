@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { AlbumI } from 'src/app/model/album.interface';
 import { AlbumService } from '../../services/album-service/album.service';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ export class AlbumComponent implements OnInit {
   public detailsAlbum:any=[];
   albums?:AlbumI[];
 
-  constructor(private albumService:AlbumService, private router:Router) { }
+  constructor(private albumService:AlbumService, private router:Router, private elementRef:ElementRef) { }
 
   ngOnInit(): void {
     this.albumService.getAlbums().subscribe(data=> {
@@ -29,6 +29,9 @@ export class AlbumComponent implements OnInit {
           this.detailsAlbum.album_img = "../../../../assets/"+ this.detailsAlbum.album_img;
           this.router.navigate(['private/albumpage', id.album_id]);
         })
+  }
+  onSidebar(){
+      this.elementRef.nativeElement.querySelector('.item-section').classList.toggle('close');
   }
 
 }

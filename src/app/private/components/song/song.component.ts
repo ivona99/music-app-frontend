@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { SongService } from '../../services/song-service/song.service';
 import { SongI } from 'src/app/model/song.interface';
 
@@ -12,7 +12,7 @@ export class SongComponent implements OnInit {
   songs2?:any = [];
   public songPath:any = [];
 
-  constructor(private songService:SongService) { }
+  constructor(private songService:SongService, private elementRef:ElementRef) { }
 
   ngOnInit(): void {
     this.songService.getSongs().subscribe(data=> {
@@ -24,5 +24,8 @@ export class SongComponent implements OnInit {
       
     });
   }
+  onSidebar(){
+    this.elementRef.nativeElement.querySelector('.item-section').classList.toggle('close');
+}
 
 }

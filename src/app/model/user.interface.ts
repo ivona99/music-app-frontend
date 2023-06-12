@@ -3,3 +3,7 @@ export interface UserI {
     user_email?: string;
     user_password?: string;
 }
+
+export interface OneUser extends UserI{
+    user_id?:number;
+}

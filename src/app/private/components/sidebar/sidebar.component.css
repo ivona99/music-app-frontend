@@ -259,6 +259,8 @@
 .body.dark .switch::before{
     left: 20px;
 }
-
-
-
+.sidebar.close ~ .dashboard-content{
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}

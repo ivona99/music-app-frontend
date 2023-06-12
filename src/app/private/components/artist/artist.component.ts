@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { ArtistService } from '../../services/artist-service/artist.service';
 import { ArtistI } from 'src/app/model/artist.interface';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ export class ArtistComponent implements OnInit {
   public detailsArtist:any =[];
   artists?: ArtistI[];
 
-  constructor(private artistService: ArtistService, private router: Router) { }
+  constructor(private artistService: ArtistService, private router: Router, private elementRef:ElementRef) { }
 
   ngOnInit() {
     this.artistService.getArtists().subscribe(data => {
@@ -31,6 +31,9 @@ export class ArtistComponent implements OnInit {
            this.router.navigate(['private/artistpage', id.artist_id]);
        });
   }
+  onSidebar(){
+    this.elementRef.nativeElement.querySelector('.item-section').classList.toggle('close');
+}
 
 }
 
