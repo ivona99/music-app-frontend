@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 export class AlbumComponent implements OnInit {
   public detailsAlbum:any=[];
   albums?:AlbumI[];
+  searchTxt: any = '';
+  searchResults:any;
+  showCard = true;
 
   constructor(private albumService:AlbumService, private router:Router, private elementRef:ElementRef) { }
 
@@ -20,6 +23,7 @@ export class AlbumComponent implements OnInit {
       this.albums?.forEach ((element:any) => {
         element.album_img = "../../../../assets/"+element.album_img;
     });
+    
     });
   }
   onDetail(id:any){
@@ -32,6 +36,19 @@ export class AlbumComponent implements OnInit {
   }
   onSidebar(){
       this.elementRef.nativeElement.querySelector('.item-section').classList.toggle('close');
+
+  }
+
+  onSearch(name:any){
+    this.albumService.getSearchByName(this.searchTxt)
+       .subscribe((data:any)=>{
+          if(data && data.album_title && this.searchTxt!==''){
+           this.searchResults = data;
+           data.album_img = "../../../../assets/"+data.album_img;
+          }
+         this.showCard = false;
+          this.searchTxt = '';
+       });
   }
 
 }

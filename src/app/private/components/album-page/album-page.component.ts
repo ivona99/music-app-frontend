@@ -44,7 +44,7 @@ export class AlbumPageComponent implements OnInit {
         element.song_image = "../../../../assets/" +element.song_image;
         element.song_path = "../../../../assets/" +element.song_path;
       });
-      console.log("one sonf", this.songs);
+      console.log("one song", this.songs);
     });
   }
 

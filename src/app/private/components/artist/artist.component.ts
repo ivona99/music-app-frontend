@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 export class ArtistComponent implements OnInit {
   public detailsArtist:any =[];
   artists?: ArtistI[];
+  searchTxt: any = '';
+  searchResults:any;
+  showCard = true;
 
   constructor(private artistService: ArtistService, private router: Router, private elementRef:ElementRef) { }
 
@@ -33,6 +36,17 @@ export class ArtistComponent implements OnInit {
   }
   onSidebar(){
     this.elementRef.nativeElement.querySelector('.item-section').classList.toggle('close');
+}
+onSearch(name:any){
+  this.artistService.getSearchByName(this.searchTxt)
+     .subscribe((data:any)=>{
+        if(data && data.artist_name && this.searchTxt!==''){
+         this.searchResults = data;
+         data.artist_img = "../../../../assets/"+data.artist_img;
+        }
+       this.showCard = false;
+        this.searchTxt = '';
+     });
 }
 
 }

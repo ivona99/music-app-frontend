@@ -10,7 +10,9 @@ import { SongI } from 'src/app/model/song.interface';
 export class SongComponent implements OnInit {
   songs?:SongI[] = [];
   songs2?:any = [];
-  public songPath:any = [];
+  public songPath:any = [];  searchTxt: any = '';
+  searchResults:any;
+  showCard = true;
 
   constructor(private songService:SongService, private elementRef:ElementRef) { }
 
@@ -26,6 +28,18 @@ export class SongComponent implements OnInit {
   }
   onSidebar(){
     this.elementRef.nativeElement.querySelector('.item-section').classList.toggle('close');
+}
+onSearch(name:any){
+  this.songService.getSearchByName(this.searchTxt)
+     .subscribe((data:any)=>{
+        if(data && data.artist_name && this.searchTxt!==''){
+         this.searchResults = data;
+         data.song_image = "../../../../assets/"+data.song_image;
+         data.song_path = "../../../../assets/"+data.song_path;       
+        }
+       this.showCard = false;
+        this.searchTxt = '';
+     });
 }
 
 }

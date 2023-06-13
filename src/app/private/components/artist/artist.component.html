@@ -5,11 +5,14 @@
     <div class="dashboard-content">
         <div class="search-section">
             <div class="search-bar">
-                <input type="text" placeholder="Search">
+                <input [(ngModel)]="searchTxt" (keydown.enter)="onSearch($event.target)" type="text" placeholder="Search">
             </div>
         </div>
         <div class="item-section" >
-            <app-artist-card *ngFor="let artist of artists" [data]="artist" (detailEvent)="onDetail(artist)"></app-artist-card>
+            <app-artist-card *ngFor="let artist of artists" [data]="artist" (detailEvent)="onDetail(artist)" [showCard]="showCard"></app-artist-card>
+        </div>
+        <div class="item-section">
+            <app-artist-card  [data]="searchResults"  (detailEvent)="onDetail(searchResults)"  [showCard]="!showCard"></app-artist-card>
         </div>
     </div>
 </div>

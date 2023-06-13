@@ -16,4 +16,7 @@ export class AlbumService {
   getDetailAlbum(id:any):any {
     return this.http.get(`http://localhost:3000/albums/${id}`);
   }
+  getSearchByName(name:any):any{
+    return this.http.get(`http://localhost:3000/albums/search?name=${name}`)
+  }
 }

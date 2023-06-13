@@ -8,6 +8,8 @@ import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 })
 export class AlbumCardComponent implements OnInit {
 @Input() data:any;
+@Input() showCard?:boolean;
+
 @Output() detailEvent:EventEmitter<any> = new EventEmitter<any>();
 onDetail(){
   this.detailEvent.emit();

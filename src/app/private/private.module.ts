@@ -12,6 +12,7 @@ import { AlbumComponent } from './components/album/album.component';
 import { SongComponent } from './components/song/song.component';
 import { AlbumPageComponent } from './components/album-page/album-page.component';
 import { SongCardComponent } from './components/song-card/song-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SongCardComponent } from './components/song-card/song-card.component';
   ],
   imports: [
     CommonModule,
-    PrivateRoutingModule
+    PrivateRoutingModule,
+    FormsModule
   ]
 })
 export class PrivateModule { }

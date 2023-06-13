@@ -14,6 +14,7 @@ export class ArtistPageComponent implements OnInit {
   description?:string;
   imageUrl?: string;
   albums?:AlbumI[];
+  showCard:boolean = true;
 
 //activatedroute service is used to access the id from the route parameters
 //it subcribes to the params observable to get the id value whenever the route parameter changes
@@ -38,6 +39,8 @@ export class ArtistPageComponent implements OnInit {
       this.albums?.forEach((element:any) => {
         element.album_img = "../../../../assets/"+element.album_img;
       });
+      console.log("album", this.albums);
+      
     });
   }
 

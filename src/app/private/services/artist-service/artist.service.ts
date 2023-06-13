@@ -17,4 +17,7 @@ export class ArtistService {
   getDetailArtist(id:any):any{
     return this.http.get(`http://localhost:3000/artists/${id}`);
   }
+  getSearchByName(name:any):any{
+    return this.http.get(`http://localhost:3000/artists/search?name=${name}`)
+  }
 }

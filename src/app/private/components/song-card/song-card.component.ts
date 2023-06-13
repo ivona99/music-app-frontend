@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SongCardComponent implements OnInit {
 @Input() data:any;
 @Input() i:any;
+@Input() showCard?:boolean;
   constructor() { }
 
   ngOnInit(): void {
