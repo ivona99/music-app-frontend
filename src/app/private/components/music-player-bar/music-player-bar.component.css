@@ -1,0 +1,11 @@
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.slider-full {
+    width: 100%;
+}

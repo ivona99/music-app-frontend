@@ -23,7 +23,7 @@
         <div class="col-md-6 item">Audio</div>
     </div>
     <hr>
-        <app-song-card *ngFor="let song of songs let i= index" [data]="song" [i]="i"></app-song-card>
+        <app-song-card *ngFor="let song of songs let i= index" [data]="song" [i]="i" [showCard]="showCard"></app-song-card>
 </div>
 </div>
 

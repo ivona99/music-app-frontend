@@ -44,7 +44,7 @@ export class AlbumComponent implements OnInit {
        .subscribe((data:any)=>{
           if(data && data.album_title && this.searchTxt!==''){
            this.searchResults = data;
-           data.album_img = "../../../../assets/"+data.album_img;
+           data.album_img = "../../../../assets/public/images/albums/album-beyonce.png";
           }
          this.showCard = false;
           this.searchTxt = '';

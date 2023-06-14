@@ -15,7 +15,6 @@ import { FooterComponent } from './home/footer/footer.component';
 import { HomeAlbumComponent } from './home/home-album/home-album.component';
 
 
-
 export function tokenGetter () {
   return localStorage.getItem("nestjs_music_app")
 }

@@ -20,6 +20,7 @@ export class AlbumPageComponent implements OnInit {
   songImage?:string;
   songAudio?:string;
   artistDesc?:ArtistI;
+  showCard:boolean = true;
 
   constructor(private albumService:AlbumService, private route: ActivatedRoute) { }
 

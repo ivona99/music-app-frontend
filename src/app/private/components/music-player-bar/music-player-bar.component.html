@@ -1,0 +1,39 @@
+<footer>
+    <mat-toolbar>
+      <!-- <input type="file" 
+        #uploadFileInput 
+        (change)="uploadMusic($event)" 
+        multiple hidden accept=".mp3" />
+      <button mat-icon-button (click)="uploadFileInput.click()">
+        <mat-icon>cloud_upload</mat-icon>
+      </button> -->
+      <button mat-icon-button (click)="prev()">
+        <mat-icon>skip_previous</mat-icon>
+      </button>
+      <button mat-icon-button (click)="play()">
+        <mat-icon>{{ audio.paused ? 'play_arrow' : 'pause' }}</mat-icon>
+      </button>
+      <button mat-icon-button (click)="next()">
+        <mat-icon>skip_next</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>volume_up</mat-icon>
+      </button>
+      <mat-slider
+        (input)="volumeSlider($event)"
+        color="primary"
+        value="16" step="1"
+        min="0" max="16">
+      </mat-slider>
+    </mat-toolbar>
+    <mat-toolbar>
+      {{ currentTime }}&nbsp;/&nbsp;{{ musicLength }}
+      <mat-slider
+        (input)="durationSlider($event)"
+        class="slider-full"
+        color="primary"
+        value="{{ audio.readyState === 0 ? 0 : audio.currentTime }}"
+        min="0" max="{{ duration }}">
+      </mat-slider>
+    </mat-toolbar>
+  </footer>
