@@ -11,7 +11,7 @@
         <mat-icon>skip_previous</mat-icon>
       </button>
       <button mat-icon-button (click)="play()">
-        <mat-icon>{{ audio.paused ? 'play_arrow' : 'pause' }}</mat-icon>
+        <mat-icon>{{ ispaused ? 'play_arrow' : 'pause' }}</mat-icon>
       </button>
       <button mat-icon-button (click)="next()">
         <mat-icon>skip_next</mat-icon>

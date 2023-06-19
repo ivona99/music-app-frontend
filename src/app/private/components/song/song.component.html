@@ -9,13 +9,13 @@
             </div>
         </div>
         <div class="item-section" >
-            <app-song-card *ngFor="let song of songs let i = index" [data]="song" [i]="i" [showCard]="showCard"></app-song-card>
+            <app-song-card *ngFor="let song of songs let i = index" [data]="song" [i]="i" (playEvent)="play(i)"[showCard]="showCard"></app-song-card>
         </div>
         <div class="item-section">
             <app-song-card  [data]="searchResults"   [showCard]="!showCard"></app-song-card>
         </div>
-        <!-- <div class="item-section">
-            <app-music-player-bar></app-music-player-bar>
-        </div> -->
+        <div class="item-section">
+            <app-music-player-bar [audio]="audio" [ispaused]="audio.paused" (playEvent)="play()" [musicList]="songs" [currentTime]="currentTime" [duration]="duration" [musicLength]="musicLength" [currentMusic]="currentMusic" [trackPointer]="trackPointer"></app-music-player-bar>
+        </div>
     </div>
 </div>

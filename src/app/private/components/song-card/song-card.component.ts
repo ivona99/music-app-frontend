@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-song-card',
@@ -9,6 +9,10 @@ export class SongCardComponent implements OnInit {
 @Input() data:any;
 @Input() i:any;
 @Input() showCard?:boolean;
+@Output() playEvent:EventEmitter<any> = new EventEmitter<any>();
+play(index?:number){
+  this.playEvent.emit(index);
+}
   constructor() { }
 
   ngOnInit(): void {

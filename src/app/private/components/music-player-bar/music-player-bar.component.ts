@@ -1,7 +1,7 @@
 import { AlbumI } from './../../../model/album.interface';
 import { SongI } from './../../../model/song.interface';
 import { SongService } from './../../services/song-service/song.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-music-player-bar',
@@ -9,12 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./music-player-bar.component.css']
 })
 export class MusicPlayerBarComponent implements OnInit {
-  title = 'angular-music-player';
-  audio = new Audio();
-  musicLength: string = '0:00';
-  duration: number = 1;
-  currentTime: string = '0:00';
-  musicList:SongI[] = [];
+  @Input() audio = new Audio();
+  @Input() musicLength: string = '0:00';
+  @Input() duration: number = 1;
+  @Input() currentTime: string = '0:00';
+  @Input() musicList:SongI[] = [];
+  @Input() ispaused?:boolean;
+  @Output() playEvent:EventEmitter<any> = new EventEmitter<any>();
+  play(){
+    this.playEvent.emit();
+  }
 
   constructor(private songService: SongService) { }
 
@@ -23,36 +27,18 @@ export class MusicPlayerBarComponent implements OnInit {
       this.musicList = data;
       this.musicList.forEach((element:any) => {
         element.song_path = "../../../../assets/"+element.song_path;
-      })
+      });
     });
   }
   
-  trackPointer: number = 0;
-  currentMusic: SongI = {
+ @Input() trackPointer: number = 0;
+ @Input() currentMusic: SongI = {
     song_title:"",
     song_path:"",
     song_image:"",
     artist_name:""
   }
-  play(index?: number): void {
-    if (index === undefined) {
-      if (this.audio.paused) {
-        if (this.audio.readyState === 0) {
-          this.trackPointer = 0;
-          this.currentMusic = this.musicList[0];
-          this.audio.src = this.currentMusic.song_path;
-        }
-        this.audio.play();
-      } else {
-        this.audio.pause();
-      }
-    } else {
-      this.trackPointer = index;
-      this.currentMusic = this.musicList[index];
-      this.audio.src = this.currentMusic.song_path;
-      this.audio.play();
-    } 
-  }
+
 
   prev(): void {
     this.trackPointer--;
